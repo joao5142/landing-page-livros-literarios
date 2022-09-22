@@ -106,6 +106,7 @@ export default {
   &::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
   }
+
   @include responsivo(md) {
     & {
       gap: 50px;
@@ -119,7 +120,10 @@ export default {
       overflow-x: auto;
       // overflow-y: hidden;
       scroll-behavior: smooth;
-
+       cursor: grab;
+      &:active{
+        cursor: grabbing;
+      }
       // @include setScrollGradient($gradient-scroll);
     }
   }
@@ -143,18 +147,31 @@ export default {
 }
 .slide-left {
   left: -50px;
+
+  @include responsivo(md) {
+    & {
+     left: -20px;
+    }
+  }
   @include responsivo(xs) {
     & {
-      left: -20px;
+      left: -17px;
     }
+
   }
 }
 .slide-right {
   right: -50px;
 
-  @include responsivo(xs) {
+
+   @include responsivo(md) {
     & {
       right: -20px;
+    }
+  }
+    @include responsivo(xs) {
+    & {
+      right: -17px;
     }
   }
 }
@@ -177,7 +194,10 @@ export default {
 .overflow {
   width: 100%;
   min-width: 100%;
-
+  cursor: grab;
+  &:active{
+    cursor: grabbing;
+  }
   // @include setScrollGradient($gradient-scroll);
 }
 </style>

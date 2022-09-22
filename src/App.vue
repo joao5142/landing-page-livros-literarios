@@ -419,7 +419,7 @@ main {
   background-image: url("/public/assets/images/literarios/banner.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -55px;
+
   background-attachment: fixed;
   height: 100vh;
   position: relative;
