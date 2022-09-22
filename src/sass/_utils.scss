@@ -1,0 +1,69 @@
+@mixin setLinearGradient($gradient) {
+  background: linear-gradient($gradient);
+}
+
+@mixin setScrollColor($color) {
+  /* FIREFOX SCROLL SUPORT */
+  scrollbar-color: $color #e4e4e4;
+  scrollbar-width: 12px;
+
+  /* SCROLL SUPORT EDGE,CHROME E OPERA */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 20px;
+  }
+}
+
+@mixin setScrollGradient($gradient) {
+  /* FIREFOX SCROLL SUPORT */
+  scrollbar-color: linear-gradient($gradient) #e4e4e4;
+  scrollbar-width: 12px;
+
+  /* SCROLL SUPORT EDGE,CHROME E OPERA */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient($gradient);
+    border-radius: 20px;
+  }
+}
+
+@mixin responsivo($tipo) {
+  @if $tipo == xs {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $tipo == sm {
+    @media (max-width: 960px) {
+      @content;
+    }
+  } @else if $tipo == md {
+    @media (max-width: 1264px) {
+      @content;
+    }
+  } @else if $tipo== lg {
+    @media (max-width: 1904px) {
+      @content;
+    }
+  } @else if $tipo== xl {
+    @media (min-width: 1904px) {
+      @content;
+    }
+  }
+}
